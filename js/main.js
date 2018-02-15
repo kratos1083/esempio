@@ -1,6 +1,10 @@
 
 function changeTitle(){
-	document.getElementById('ciao').innerHTML = document.getElementById('cambia_titolo').value;
+	if (document.getElementById('cambia_titolo').value == ""){
+		document.getElementById('ciao').innerHTML = "Titolo vuoto";
+	}else{
+		document.getElementById('ciao').innerHTML = document.getElementById('cambia_titolo').value;
+	}
 }
 
 function changeResult(){
