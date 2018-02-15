@@ -8,19 +8,26 @@ function changeTitle(){
 }
 
 function changeResult(){
-
+	var ris;
 	switch(document.getElementById('operazione').value){
 		case '+':
-			document.getElementById('ris').innerHTML = (Number(document.getElementById('num1').value) + Number(document.getElementById('num2').value));
-
+			ris = Number(document.getElementById('num1').value) + Number(document.getElementById('num2').value);
 		break;
 		case '-':
-			document.getElementById('ris').innerHTML = (Number(document.getElementById('num1').value) - Number(document.getElementById('num2').value));		break;
+			ris = Number(document.getElementById('num1').value) - Number(document.getElementById('num2').value);
+		break;
 		case '*':
-			document.getElementById('ris').innerHTML = (Number(document.getElementById('num1').value) * Number(document.getElementById('num2').value));
+			ris = Number(document.getElementById('num1').value) * Number(document.getElementById('num2').value);		
 		break;
 		case '/':
-			document.getElementById('ris').innerHTML = (Number(document.getElementById('num1').value) / Number(document.getElementById('num2').value));		break;
+			ris = Number(document.getElementById('num1').value) / Number(document.getElementById('num2').value);			
+		break;
 	}
+
+	if (ris==0){
+				document.getElementById('ris').innerHTML = "0";
+			}else {
+			document.getElementById('ris').innerHTML = ris ? ris : "Non valida";
+		}
 
 }
